@@ -315,7 +315,7 @@ local function apply_register(register)
 		vim.api.nvim_feedkeys(keys, current_mode, true)
 		if config().system_clip == 1 then
 			if vim.fn.has("clipboard") == 1 then
-				vim.cmd('let @*=@'..register)
+				vim.cmd('let @+=@'..register)
 			else
 				vim.api.nvim_err_writeln("No clipboard available")
 			end
